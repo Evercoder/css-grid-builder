@@ -1,0 +1,8 @@
+.grid {
+	display: grid;
+	height: 100vh;
+}
+
+.cell {
+	border: 1px solid red;
+}
