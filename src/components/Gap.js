@@ -26,10 +26,6 @@ class Gap extends React.Component {
 			/>
 		);
 	}
-}
-
-// style={
-
-// }
+};
 
 export default Gap;
