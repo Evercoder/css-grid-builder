@@ -1,4 +1,6 @@
 import React from 'react';
+import { DeltaSurface } from 'uiuiui';
+
 import '../css/Gap.css';
 
 const position = ({ type, index, length, size }) => (
@@ -14,18 +16,21 @@ const position = ({ type, index, length, size }) => (
 );
 
 class Gap extends React.Component {
-	render() {
 
+	render() {
 		return (
 			<div
-				className={`
-					gap 
-					${ this.props.type === 'row' ? 'gap--row' : 'gap--column' }
-				`}
+				className={`gap ${ this.props.type === 'row' ? 'gap--row' : 'gap--column' }`}
 				style={position(this.props)}
-			/>
+			>
+				<DeltaSurface onChange={this.props.onChange}/>
+			</div>
 		);
 	}
+};
+
+Gap.defaultProps = {
+	onChange: () => {}
 };
 
 export default Gap;

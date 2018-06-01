@@ -6,9 +6,29 @@
 .gap--row {
 	height: 1em;
 	top: 100%;
+	cursor: ns-resize;
 }
 
 .gap--column {
 	width: 1em;
 	left: 100%;
+	cursor: ew-resize;
+}
+
+.gap .uix-surface {
+	min-width: 6px;
+	min-height: 6px;
+	position: absolute;
+}
+
+.gap--row .uix-surface {
+	left: 0;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.gap--column .uix-surface {
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
