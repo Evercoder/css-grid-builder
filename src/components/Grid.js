@@ -4,6 +4,7 @@ import '../css/Grid.css';
 import { range } from 'd3-array';
 
 import Gap from './Gap';
+import Cell from './Cell';
 import Output from './Output';
 
 const initial_state = {
@@ -51,16 +52,11 @@ class Grid extends React.Component {
 				}>
 					{ 
 						range(columns.length * rows.length).map(i => 
-							<div 
-								className='cell'
+							<Cell
 								key={`cell_${i}`}
-								style={
-									{
-										gridColumn: (i % columns.length + 1),
-										gridRow: (Math.floor(i / columns.length) + 1)
-									}
-								}
-							></div>
+								column={i % columns.length + 1}
+								row={Math.floor(i / columns.length) + 1}
+							/>
 						) 
 					}
 					
